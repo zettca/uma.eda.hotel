@@ -8,16 +8,19 @@
 
 using namespace std;
 
+void trimLine(string &line) {
+    for (char c = line.back(); c == '\r' || c == '\t' || c == ' '; c = line.back()) {
+        line.pop_back();
+    }
+}
+
 void loadFileToVector(vector<string> &vector, const char *filename) {
     ifstream file(filename);
     string line;
 
     while (getline(file, line)) {
         if (!line.empty()) {
-            // remove whitespace
-            for (char c = line.back(); c == '\r' || c == '\t' || c == ' '; c = line.back()) {
-                line.pop_back();
-            }
+            trimLine(line); // remove whitespace
             vector.push_back(line);
         }
     }
@@ -41,26 +44,44 @@ void saveHotel(Hotel &hotel, const char *file) {
 
 void loadHotel(Hotel &hotel, const char *file) {
     ifstream infile(file);
-    string line;
+    string str;
 
     hotel.clear();
 
-    while (getline(infile, line)) {
-        if (!line.empty()) {
-            char c = line.at(0);
+    while (!infile.eof()) {
+        infile >> str;
 
-
-            //TODO: finish loading state from file
-            if (c == 'H') { // H _numRooms
-                // should be first, do nothing
-            } else if (c == 'R') { // R _id _cap _numGuests
-                // parse line, read N guests inside
-                // G (person)
-            } else if (c == 'W') { // W (person)
-                // parse line, add
-            }
-
-
+        if (str == "H") {
+            int numRooms;
+            infile >> numRooms;
+            cout << "read Hotel" << endl;
+        } else if (str == "R") { // read room line
+            int number, capacity, numGuests;
+            infile >> number >> capacity >> numGuests;
+            cout << "read Room " << number << endl;
+            Room room(number, capacity);
+            hotel.addRoom(room);
+            //TODO: fix loading room guests
+            /*for (int i = 0; i < numGuests; ++i) { // read room guests
+                cout << "reading Room guest " << i << endl;
+                string code, name, familyName, nationality;
+                int reservationId, duration;
+                infile >> code >> name >> familyName >> reservationId >> duration;
+                getline(infile, nationality);
+                trimLine(nationality);
+                cout << "read Room guest " << name << endl;
+                Guest guest(name, familyName, name, reservationId, duration);
+                room.addGuest(guest);
+            }*/
+        } else if (str == "W") {
+            cout << "read Waiting guest" << endl;
+            string name, familyName, nationality;
+            int reservationId, duration;
+            infile >> name >> familyName >> reservationId >> duration;
+            getline(infile, nationality);
+            trimLine(nationality);
+            Guest guest(name, familyName, name, reservationId, duration);
+            hotel.reception.addGuest(guest);
         }
     }
 }

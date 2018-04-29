@@ -14,14 +14,12 @@ public:
 
     Hotel() {}
 
-    Hotel(int numRooms) : numRooms(numRooms) {}
-
     void addRoom(Room &room) {
         rooms.push_back(room);
     }
 
     void initializeRandom() {
-        numRooms = rand() % 10 + 10;
+        numRooms = rand() % 10 + 10; // random between 10 and 20
         for (int i = 0; i < numRooms; ++i) {
             Room room;
             room.initializeRandom();
@@ -94,6 +92,7 @@ public:
     void clear() {
         rooms.clear();
         reception.clear();
+        Room::counter = 0;
     }
 };
 

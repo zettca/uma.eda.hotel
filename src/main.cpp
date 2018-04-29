@@ -9,22 +9,38 @@
 
 using namespace std;
 
-vector<string> nomes, familias, nacionalidades;
+vector<int> ids;
+vector<string> names, families, nationalities;
 Hotel hotel;
 
-vector<Guest> generateGuests(int numGuests) {
-    int reservationId = rand() % 1000000;
-    int reservationDuration = rand() % 10 + 1;
+int generateReservationId() {
+    int id = rand() % 900000 + 100000; // 6 digit number
+    while (find(ids.begin(), ids.end(), id) != ids.end()) {
+        id = rand() % 900000 + 100000;
+    }
+    return id;
+}
 
+vector<Guest> generateGuests(int numGuests) {
     vector<Guest> guests;
 
-    for (int i = 0; i < numGuests; ++i) {
-        string givenName = nomes.at(rand() % nomes.size());
-        string familyName = familias.at(rand() % familias.size());
-        string nationality = nacionalidades.at(rand() % nacionalidades.size());
+    while (numGuests > 0) {
+        // generate a group
+        int reservationId = generateReservationId();
+        int reservationDuration = rand() % 10 + 1;
+        int reservationGuestNum = rand() % 8 + 1;
+        numGuests -= reservationGuestNum;
 
-        Guest guest(givenName, familyName, nationality, reservationId, reservationDuration);
-        guests.push_back(guest);
+        // add whole group if possible, else add remainder
+        int numToAdd = (numGuests >= 0) ? reservationGuestNum : reservationGuestNum + numGuests;
+        for (int i = 0; i < numToAdd; ++i) {
+            string givenName = names.at(rand() % names.size());
+            string familyName = families.at(rand() % families.size());
+            string nationality = nationalities.at(rand() % nationalities.size());
+
+            Guest guest(givenName, familyName, nationality, reservationId, reservationDuration);
+            guests.push_back(guest);
+        }
     }
 
     return guests;
@@ -36,16 +52,6 @@ void fillHotelWithGuests() {
             room.addGuest(guest);
         }
     }
-}
-
-int getAvailableRoom() {
-    for (unsigned int i = 0; i < hotel.rooms.size(); ++i) {
-        Room room = hotel.rooms.at(i);
-        if (room.isAvailable()) {
-            return i;
-        }
-    };
-    return -1;
 }
 
 void doHotelCycle() {
@@ -60,7 +66,7 @@ void doHotelCycle() {
         }
     }
 
-    // assign guests to rooms
+    // assign waiting guests (a FIFO queue ) to available rooms
     for (auto &room : hotel.rooms) {
         if (hotel.reception.waitingGuests.empty()) break;
         if (room.isAvailable()) {
@@ -86,12 +92,13 @@ int main(int argc, const char *argv[]) {
     srand(time(NULL));
 
     // load default names to global name vectors
-    loadFileToVector(nomes, "values/nome.txt");
-    loadFileToVector(familias, "values/familia.txt");
-    loadFileToVector(nacionalidades, "values/nacionalidade.txt");
+    loadFileToVector(names, "values/nome.txt");
+    loadFileToVector(families, "values/familia.txt");
+    loadFileToVector(nationalities, "values/nacionalidade.txt");
 
     if (argc > 1) {
         loadHotel(hotel, argv[1]);  // load hotel from file
+        cout << "Loaded hotel data from file: " << argv[1] << endl;
     } else {
         hotel.initializeRandom();   // initializeRandom with random values
         fillHotelWithGuests();  // fill on first iteration
@@ -112,6 +119,8 @@ int main(int argc, const char *argv[]) {
                 break;
             case 'g':
                 saveHotel(hotel, "hotel.txt");
+                cout << "Hotel saved to file hotel.txt" << endl;
+                waitFor0();
                 break;
             case 's':
                 doHotelCycle();

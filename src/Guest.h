@@ -16,8 +16,8 @@ public:
 };
 
 ostream &operator<<(ostream &os, const Guest &guest) {
-    os << guest.name << " " << guest.familyName << " " << guest.nationality << " " << guest.reservationId <<
-       " " << guest.duration << endl;
+    os << guest.name << " " << guest.familyName << " " << guest.reservationId << " " << guest.duration << endl;
+    os << guest.nationality << endl;
     return os;
 }
 

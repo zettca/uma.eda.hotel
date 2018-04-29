@@ -44,6 +44,11 @@ string &getInput(string &line, const char *message) {
     return line;
 }
 
+void waitFor0() {
+    cout << "pressione 0 para voltar" << endl;
+    while (getchar() != '0');
+}
+
 /* ========== MENUS ========== */
 
 void menuMain(Hotel &hotel) {
@@ -80,14 +85,12 @@ void menuDisplayGuests(Hotel &hotel) {
     switch (cmd) {
         case '1': { // Hóspedes de origem estrangeira
             hotel.displayForeignerGuests();
-            cout << "pressione 0 para voltar" << endl;
-            while (getchar() != '0');
+            waitFor0();
             break;
         }
         case '2': { // Hóspedes de origem portuguesa ou sul-africana
             hotel.displayPortugueseSAGuests();
-            cout << "pressione 0 para voltar" << endl;
-            while (getchar() != '0');
+            waitFor0();
             break;
         }
         case '0': { // Voltar

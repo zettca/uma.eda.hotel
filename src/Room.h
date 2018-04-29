@@ -15,10 +15,10 @@ public:
 
     Room() : number(++counter) {}
 
-    Room(int cap) : number(++counter), capacity(cap) {}
+    Room(const int number, int capacity) : number(number), capacity(capacity) {}
 
     void initializeRandom() {
-        capacity = rand() % 5 + 1;
+        capacity = rand() % 5 + 1; // random between 1 and 5
     }
 
     bool isAvailable() {
