@@ -10,4 +10,4 @@ run: hotel
 	./hotel
 
 clean:
-	rm -f hotel
+	rm -f hotel hotel.txt

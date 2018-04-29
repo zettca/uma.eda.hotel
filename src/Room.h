@@ -13,18 +13,20 @@ public:
 
     vector<Guest> guests;
 
-    Room() : number(++counter) {
-        initialize();
+    Room() : number(++counter) {}
+
+    Room(int cap) : number(++counter), capacity(cap) {}
+
+    void initializeRandom() {
+        capacity = rand() % 5 + 1;
     }
 
-    void initialize() {
-        capacity = (rand() % 5) + 1;
+    bool isAvailable() {
+        return guests.empty();
     }
 
-    void addGuests(vector<Guest> guests) {
-        for (auto guest : guests) {
-            this->guests.push_back(guest);
-        }
+    void addGuest(Guest &guest) {
+        guests.push_back(guest);
     }
 
     void clear() {
@@ -35,7 +37,7 @@ public:
 int Room::counter = 0;
 
 ostream &operator<<(ostream &os, const Room &room) {
-    os << "R " << room.number << " " << room.capacity << " " << room.guests.size() << endl;
+    os << room.number << " " << room.capacity << " " << room.guests.size() << endl;
     return os;
 }
 
