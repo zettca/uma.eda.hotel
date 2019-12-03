@@ -1,0 +1,81 @@
+H 12
+R 1 5 2
+G Antoine YOUNG 409847 1
+Heard and McDonald Islands
+G Mathias MORGAN 775399 1
+Dominica
+R 2 2 1
+G Mathis RICHARDSON 292408 1
+Niger
+R 3 1 1
+G Quentin WOOD 270992 1
+Namibia
+R 4 1 1
+G Titouan HILL 408429 3
+Turks and Caicos Islands
+R 5 4 4
+G Ilyes GRAY 469330 7
+Netherlands Antilles
+G Arthur MC 469330 7
+Botswana
+G Noa WALKER 469330 7
+Madagascar
+G Marta WARD 469330 7
+St. Kitts, West Indies
+R 6 2 2
+G Evan ﻿SMITH 876249 5
+Costa Rica
+G Arthur MOORE 876249 5
+Stateless - Alien Unable to Name a Country
+R 7 3 1
+G Luana TAYLOR 292408 1
+San Marino
+R 8 1 1
+G Tristan WALKER 571297 6
+Trinidad and Tobago
+R 9 1 1
+G Inês MARTIN 800184 1
+Chad
+R 10 2 2
+G Mathis HOWARD 628957 7
+Uruguay
+G Alexandre HUGHES 238707 2
+Unknown Nationality
+R 11 3 2
+G Nael BENNETT 927350 6
+Tajikistan (Tadzhik)
+G Benjamin SHAW 927350 6
+Burkina Faso
+R 12 4 4
+G Catarina WILLIAMS 252616 6
+Solomon Islands
+G Théo WATSON 252616 6
+Armenia
+G Baptiste GREEN 252616 6
+Greece
+G Léo JOHNSON 252616 6
+Mexico
+W Nolan SCOTT 180851 7
+Yemen
+W Baptiste RICHARDSON 180851 7
+Somalia
+W Ana MILLER 180851 7
+Andorra
+W Kylian GRAY 180851 7
+Cocos Island
+W Enzo COOPER 180851 7
+Hong Kong
+W Matteo MORRIS 180851 7
+Antigua and Barbuda
+W Marius WOOD 325854 3
+Kirghizia (Kyrgyzstan)
+W Alexandre BROWN 155779 9
+Albania
+W Aaron CAMPBELL 247360 3
+Zaire
+W Mafalda ANDERSON 247360 3
+Pakistan
+W Yanis HARRISON 448183 5
+Aruba
+W Benjamin KING 448183 5
+Costa Rica
