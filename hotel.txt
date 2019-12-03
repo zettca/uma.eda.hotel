@@ -1,0 +1,92 @@
+H 15
+R 1 4 4
+G Louis COLLINS 346128 1
+Kenya
+G Sara COOPER 346128 1
+Cambodia
+G Maxence MURPHY 346128 1
+Cyprus
+G Noé HAMILTON 346128 1
+Uzebekistan
+R 2 1 1
+G Nicolas ﻿SMITH 273522 7
+Uzebekistan
+R 3 4 4
+G Sacha STEWART 607123 2
+Belgium
+G Adrien SHAW 607123 2
+Sweden
+G Luana BELL 607123 2
+Lebanon
+G Nicolas ADAMS 607123 2
+Antigua and Barbuda
+R 4 4 4
+G Evan COOPER 261374 9
+Costa Rica
+G Paul HAMILTON 261374 9
+El Salvador
+G Aaron HARRISON 261374 9
+Spain
+G Sacha HENRY 261374 9
+Not Designated by IJ
+R 5 2 2
+G Mathys ANDERSON 776776 7
+Ecuador
+G Noa COOK 776776 7
+Lithuania
+R 6 1 1
+G Leonor MITCHELL 178128 5
+Macedonia
+R 7 2 2
+G Margarida MARTIN 337674 7
+British Virgin Islands
+G Dylan ANDERSON 337674 7
+Moldavia
+R 8 2 1
+G Luana WHITE 494405 8
+Papua New Guinea
+R 9 2 2
+G Tom THOMAS 200063 6
+Bangladesh
+G Laura FOSTER 200063 6
+Lesotho
+R 10 2 2
+G Diego LEE 528479 3
+Cocos Island
+G Samuel CARTER 528479 3
+Tanzania
+R 11 4 3
+G Louis ADAMS 758975 3
+Iraq
+G Matteo ﻿SMITH 584270 3
+India
+G Noa ROGERS 807350 1
+Andorra
+R 12 1 1
+G Timeo MORRIS 972786 5
+Midway Islands
+R 13 2 1
+G Yanis WILSON 985303 1
+Hungary
+R 14 1 1
+G Alexandre HARRIS 664785 2
+Gambia
+R 15 2 2
+G Amine DAVIS 183170 6
+Brunei
+G Mathys JOHNSON 183170 6
+Madagascar
+W Ana TAYLOR 616011 3
+Anguilla
+W Marta RUSSELL 616011 3
+British Virgin Islands
+W Mathys LEE 630019 10
+Netherlands
+W Corentin LEWIS 630019 10
+Heard and McDonald Islands
+W Victor DAVIS 630019 10
+Yugoslavia
+W Rita DAVIS 447975 4
+United Arab Emirates
+W Antoine LEWIS 447975 4
+Nauru
